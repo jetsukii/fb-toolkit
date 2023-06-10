@@ -184,7 +184,7 @@ def massJGFSN():
     __cookies = {'cookie':open('user/.cookies', 'r').read()}
     link = [f'https://mbasic.facebook.com/friends/center/search/?eav=Afbxj3f6R2N5hKDjNhYlhAFaejIV1apne0-uq3xBwkWoJDCJmB93XR261629ebCpMrA&paipv=0&refid=8&search&search_source=welcome_search&q={name}&submit=Cari&mfl_act=2&_rdr#last_acted']
     with r.Session() as ses:
-        for url in nex:
+        for url in link:
             page = bs(ses.get(url, cookies=__cookies).text, 'html.parser')
             for tbody in page.find_all('tbody'):
                 if 'Gabung' in str(tbody):
